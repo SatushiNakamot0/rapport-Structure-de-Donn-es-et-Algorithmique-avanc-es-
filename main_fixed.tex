@@ -22,10 +22,11 @@
 \usepackage{mdframed}
 \usepackage{enumitem}
 \usepackage{booktabs}
-\usepackage{tabularx}
 
+% Marges et géométrie
 \geometry{left=2.5cm, right=2.5cm, top=2.5cm, bottom=2.5cm, headheight=15pt}
 
+% Configuration des hyperliens
 \hypersetup{
     colorlinks=true,
     linkcolor=blue!50!black,
@@ -38,6 +39,7 @@
     pdfkeywords={C, Hôtel, Réservation, ncurses, ENSAH}
 }
 
+% En-têtes et pieds de page personnalisés
 \pagestyle{fancy}
 \fancyhf{}
 \fancyhead[L]{\small\textit{Système de Gestion des Réservations d'Hôtel}}
@@ -46,6 +48,7 @@
 \renewcommand{\headrulewidth}{0.5pt}
 \renewcommand{\footrulewidth}{0.5pt}
 
+% Style pour la page de garde et chapitres
 \fancypagestyle{plain}{
     \fancyhf{}
     \fancyfoot[C]{\thepage}
@@ -53,11 +56,13 @@
     \renewcommand{\footrulewidth}{0.5pt}
 }
 
+% Configuration des couleurs personnalisées
 \definecolor{ensahblue}{RGB}{0, 51, 102}
 \definecolor{ensahgold}{RGB}{204, 153, 0}
 \definecolor{codebackground}{RGB}{248, 248, 248}
 \definecolor{commentgreen}{RGB}{34, 139, 34}
 
+% Configuration améliorée pour les listings de code
 \lstset{
     basicstyle=\ttfamily\small,
     keywordstyle=\color{blue!80!black}\bfseries,
@@ -82,6 +87,7 @@
     tabsize=4
 }
 
+% Configuration des figures avec bordures
 \captionsetup[figure]{
     format=hang,
     font={small,it},
@@ -90,6 +96,7 @@
     skip=10pt
 }
 
+% Configuration des tableaux
 \captionsetup[table]{
     format=hang,
     font={small,it},
@@ -99,6 +106,7 @@
     position=top
 }
 
+% Environnement pour les figures avec bordure
 \newenvironment{borderedfigure}
     {\begin{mdframed}[linecolor=ensahblue, linewidth=1.5pt, roundcorner=5pt, 
         innertopmargin=10pt, innerbottommargin=10pt, 
@@ -106,31 +114,38 @@
         backgroundcolor=white]}
     {\end{mdframed}}
 
+% Format des titres de chapitre - configuration simplifiée
 \titleformat{\chapter}[display]
 {\normalfont\huge\bfseries\color{ensahblue}}
 {\chaptertitlename\ \thechapter}{20pt}{\Huge}
 
+% Format des sections
 \titleformat{\section}
 {\normalfont\Large\bfseries\color{ensahblue}}
 {\thesection}{1em}{}
 
+% Format des subsections
 \titleformat{\subsection}
 {\normalfont\large\bfseries\color{ensahblue!80!black}}
 {\thesubsection}{1em}{}
 
+% Configuration des listes
 \setlist[itemize]{leftmargin=*,label=\textcolor{ensahblue}{$\bullet$}}
 \setlist[enumerate]{leftmargin=*}
 
+% Configuration de la table des matières
 \renewcommand{\cftchapfont}{\bfseries\color{ensahblue}}
 \renewcommand{\cftsecfont}{\color{black}}
 \renewcommand{\cftsubsecfont}{\color{black!70}}
 
+% Amélioration des tableaux
 \newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
 \newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}}
 \newcolumntype{R}[1]{>{\raggedleft\arraybackslash}p{#1}}
 
 \begin{document}
 
+% ---------- Page de garde ----------
 \begin{titlepage}
     \begin{minipage}{0.3\textwidth}
         \includegraphics[width=3.5cm]{logos/UAE.png}
@@ -171,8 +186,10 @@
 
 \newgeometry{left=2.5cm, right=2.5cm, top=1.5cm, bottom=2.5cm}
 
+% ---------- Numérotation en chiffres romains ----------
 \renewcommand{\thechapter}{\Roman{chapter}}
 
+% ---------- Remerciements ----------
 \chapter*{Remerciements}
 \addcontentsline{toc}{chapter}{Remerciements}
 \begin{center}
@@ -192,6 +209,7 @@ Que tous trouvent ici l'expression de notre estime et de notre respect.
 }
 \end{center}
 
+% ---------- Résumé ----------
 \chapter*{Résumé}
 \addcontentsline{toc}{chapter}{Résumé}
 \begin{center}
@@ -207,6 +225,7 @@ Ce travail démontre notre maîtrise des concepts avancés de programmation en C
 }
 \end{center}
 
+% ---------- Abstract ----------
 \chapter*{Abstract}
 \addcontentsline{toc}{chapter}{Abstract}
 \begin{center}
@@ -222,11 +241,13 @@ This work demonstrates our mastery of advanced C programming concepts, including
 }
 \end{center}
 
+% ---------- Table des matières ----------
 \newpage
 \renewcommand{\contentsname}{Table des matières}
 \tableofcontents
 \newpage
 
+% Changer le titre de la table des figures
 \renewcommand{\listfigurename}{Liste des figures}
 \renewcommand{\cftfigpresnum}{Figure~}
 \renewcommand{\cftfigaftersnum}{:}
@@ -237,9 +258,11 @@ This work demonstrates our mastery of advanced C programming concepts, including
 \listoffigures
 \newpage
 
+% ---------- Retour à la numérotation arabe ----------
 \renewcommand{\thechapter}{\arabic{chapter}}
 \setcounter{chapter}{0}
 
+% ========== CHAPITRE 1 : INTRODUCTION ==========
 \chapter{Introduction Générale}
 
 \section{Contexte du Projet}
@@ -299,6 +322,7 @@ Pour rendre compte de notre démarche, ce rapport s'articulera autour de quatre 
     \item \textbf{Conclusion} : Nous conclurons sur les acquis et les perspectives d'évolution de l'application.
 \end{enumerate}
 
+% ========== CHAPITRE 2 : ANALYSE ET CONCEPTION ==========
 \chapter{Analyse et Conception du Système}
 
 \section{Architecture Générale}
@@ -425,302 +449,212 @@ typedef struct {
 
 \section{Diagrammes UML du Système}
 
-Cette section présente les diagrammes UML créés lors de la phase de conception. Ces modèles formalisent l'architecture, les workflows opérationnels et les interactions entre acteurs selon les standards UML 2.0, et correspondent directement aux fonctionnalités implémentées dans le code C.
+Cette section présente les diagrammes UML créés lors de la phase de conception du projet. Ces diagrammes formalisent l'architecture, les interactions et les comportements du système de gestion hôtelière selon les standards de modélisation UML 2.0.
 
 \subsection{Diagramme de Cas d'Utilisation}
 
-Le diagramme de cas d'utilisation définit la portée du système et identifie les acteurs principaux ainsi que leurs interactions avec les fonctionnalités.
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.9\textwidth]{diagramms/cas d'utilisation.png}
-    \caption{Diagramme de cas d'utilisation - Vue globale du système}
-\end{figure}
-
-\textbf{Acteurs identifiés :}
-
-\begin{itemize}
-    \item \textbf{Administrateur} : Dispose d'un accès complet au système
-    \begin{itemize}
-        \item Gestion des chambres (CRUD)
-        \item Gestion des clients (CRUD)
-        \item Gestion de la facturation
-        \item Configuration du système
-    \end{itemize}
-    \item \textbf{Réceptionniste} : Gère les opérations quotidiennes
-    \begin{itemize}
-        \item Créer, Modifier, Annuler des réservations
-        \item Vérifier les disponibilités
-        \item Générer des factures
-    \end{itemize}
-    \item \textbf{Client} : Accès en libre-service
-    \begin{itemize}
-        \item Consulter ses propres réservations
-        \item Vérifier les disponibilités
-    \end{itemize}
-\end{itemize}
-
-\textbf{Logique clé :} Le diagramme montre les relations d'inclusion et d'extension. Par exemple, le cas d'utilisation "Créer Réservation" inclut nécessairement "Vérifier Disponibilité" et "Calculer Montant", garantissant l'intégrité des données.
-
-\subsection{Diagramme de Classes}
-
-Le diagramme de classes représente la structure statique du système, définissant les entités métier, leurs attributs, méthodes et relations.
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.85\textwidth]{diagramms/S-PROJET/SB (2).png}
-    \caption{Diagramme de classes - Structure des entités métier}
-\end{figure}
-
-\textbf{Classes principales :}
-
-\begin{itemize}
-    \item \textbf{Client}
-    \begin{itemize}
-        \item Attributs : id, nom, prénom, email, téléphone
-        \item Cardinalité : 1 Client peut avoir N Réservations
-    \end{itemize}
-    \item \textbf{Chambre}
-    \begin{itemize}
-        \item Attributs : numéro, étage, type (Single/Double/Suite), prix, disponibilité
-        \item Cardinalité : 1 Chambre peut être liée à N Réservations
-    \end{itemize}
-    \item \textbf{Réservation}
-    \begin{itemize}
-        \item Attributs : id, date\_début, date\_fin, montant, statut
-        \item Classe associative reliant Client et Chambre
-        \item Cardinalité : 1 Réservation génère 1 Facture
-    \end{itemize}
-    \item \textbf{Facture}
-    \begin{itemize}
-        \item Attributs : id, nombre\_nuits, total, date\_émission
-        \item Cardinalité : 1:1 avec Réservation
-    \end{itemize}
-    \item \textbf{Utilisateur}
-    \begin{itemize}
-        \item Attributs : username, mot\_de\_passe (hashé), rôle (Admin/Réceptionniste/Client)
-        \item Gère l'authentification et les autorisations RBAC
-    \end{itemize}
-\end{itemize}
-
-Les associations sont implémentées en C via des clés étrangères dans les structures de données, garantissant l'intégrité référentielle.
-
-\subsection{Diagrammes de Séquence - Workflows de Réservation}
-
-\subsubsection{Créer une Réservation (Workflow Complet)}
+Le diagramme de cas d'utilisation identifie les acteurs du système et leurs interactions avec les fonctionnalités de l'application.
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.9\textwidth]{diagramms/S-PROJET/SA (2).png}
-    \caption{Séquence détaillée - Création de réservation par le réceptionniste}
+    \caption{Diagramme de cas d'utilisation global du système}
 \end{figure}
 
-Ce diagramme représente le workflow complet "Créer réservation" exécuté par le réceptionniste. Le flux opérationnel comprend :
+Ce diagramme illustre les trois acteurs principaux :
+\begin{itemize}
+    \item \textbf{Administrateur} : Dispose de tous les privilèges, incluant la gestion des utilisateurs, la supervision complète du système et l'accès aux fonctionnalités avancées de reporting.
+    \item \textbf{Réceptionniste} : Gère les opérations quotidiennes de l'hôtel (enregistrement des clients, gestion des réservations, facturation).
+    \item \textbf{Client} : Utilise le portail libre-service pour consulter les disponibilités, effectuer des réservations et visualiser son historique.
+\end{itemize}
 
-\begin{enumerate}
-    \item \textbf{Saisie des données} : Dates de séjour et type de chambre souhaité
-    \item \textbf{Vérification disponibilité} : Appel de la fonction \texttt{verifier\_dispo()}
-    \item \textbf{Saisie données client} : Informations client (nouveau ou existant)
-    \item \textbf{Liaison client} : Appel de \texttt{lier\_client()} pour associer la réservation
-    \item \textbf{Sauvegarde} : Persistance dans \texttt{reservations.dat}
-    \item \textbf{Confirmation} : Message de succès affiché
-\end{enumerate}
+Les cas d'utilisation principaux incluent :
+\begin{itemize}
+    \item Gestion de l'authentification et des sessions
+    \item CRUD complet sur les entités (Clients, Chambres, Réservations)
+    \item Vérification de disponibilité en temps réel
+    \item Génération et export de factures
+    \item Consultation d'historique et statistiques
+\end{itemize}
 
-\textbf{Correspondance UI} : Cette logique s'exécute derrière les écrans 4-8.png (Step 1  - saisie dates) et 3-4.png (Step 3 - liaison client).
+\subsection{Diagramme de Classes}
 
-\subsubsection{Vérifier Disponibilité (Boucle de Contrôle)}
+Le diagramme de classes représente la structure statique du système, définissant les entités, leurs attributs et leurs relations.
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.85\textwidth]{diagramms/S-PROJET/SB (2).png}
-    \caption{Séquence détaillée - Vérification de disponibilité des chambres}
+    \caption{Diagramme de classes du système de réservation}
 \end{figure}
 
-Séquence détaillée pour la vérification des disponibilités :
+Les classes principales sont :
+\begin{itemize}
+    \item \textbf{Client} : Encapsule les informations personnelles (id, nom, prénom, email, téléphone). Relation 1:N avec Réservation.
+    \item \textbf{Chambre} : Représente l'inventaire (numéro, type, prix, disponibilité). Relation 1:N avec Réservation.
+    \item \textbf{Réservation} : Classe associative reliant Client et Chambre, contenant les dates et le montant. Relation 1:1 avec Facture.
+    \item \textbf{Facture} : Génère les documents de facturation (ID, nombre de nuits, total calculé).
+    \item \textbf{Utilisateur} : Gère l'authentification (username, mot de passe hashé, rôle).
+\end{itemize}
 
-\begin{enumerate}
-    \item Le réceptionniste entre les dates et le type de chambre
-    \item Le système interroge \texttt{reservations.dat} pour trouver les conflits
-    \item Pour chaque chambre, vérification du chevauchement de dates
-    \item Retour du statut : "Disponible" ou "NonDisponible"
-    \item Si aucune chambre libre : affichage "Aucune chambre disponible"
-\end{enumerate}
+Les associations sont implémentées via des clés étrangères dans les structures C, respectant les contraintes d'intégrité référentielle.
 
-Cette fonction critique implémente l'algorithme de détection de conflits et prévient les surréservations.
+\subsection{Diagrammes de Séquence}
 
-\subsubsection{Modifier une Réservation}
+Les diagrammes de séquence détaillent les interactions temporelles entre objets lors de l'exécution des cas d'utilisation critiques.
+
+\subsubsection{Séquence : Authentification Utilisateur}
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.9\textwidth]{diagramms/S-PROJET/SC.png}
-    \caption{Séquence - Modification d'une réservation existante}
+    \caption{Diagramme de séquence - Authentification et routage}
 \end{figure}
 
-Le workflow de modification comprend :
-
+Ce diagramme illustre le flux d'authentification :
 \begin{enumerate}
-    \item Recherche par ID de réservation
-    \item Affichage des détails actuels
-    \item Saisie des nouvelles données (dates, chambre)
-    \item Vérification de disponibilité pour les nouvelles dates
-    \item Recalcul automatique du prix
-    \item Mise à jour de l'enregistrement
+    \item L'utilisateur saisit ses identifiants dans l'interface de login
+    \item Le module d'authentification valide les credentials contre la base \texttt{users.dat}
+    \item En cas de succès, le système vérifie le rôle de l'utilisateur
+    \item Routage vers le dashboard approprié (Admin, Réceptionniste ou Client)
+    \item Initialisation de la session avec chargement des données pertinentes
 \end{enumerate}
 
-\textbf{Correspondance UI} : Cette logique correspond à la fonction [E]dit visible dans le footer de l'écran 4-7.png (liste des réservations).
+La séparation stricte des flux selon les rôles garantit le respect du principe de moindre privilège.
 
-\subsubsection{Annuler une Réservation}
+\subsubsection{Séquence : Création de Réservation}
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.85\textwidth]{diagramms/S-PROJET/SD.png}
-    \caption{Séquence - Annulation de réservation}
+    \includegraphics[width=0.9\textwidth]{diagramms/S-PROJET/SD.png}
+    \caption{Diagramme de séquence - Processus de réservation}
 \end{figure}
 
-Le processus d'annulation suit les étapes :
-
+Le processus de réservation suit un workflow strict :
 \begin{enumerate}
-    \item Sélection de la réservation par ID
-    \item Affichage des détails pour confirmation
-    \item Demande de confirmation utilisateur (O/N)
-    \item Si confirmé : mise à jour du statut vers "ANNULEE"
-    \item Libération de la chambre associée
+    \item Sélection du client (recherche ou création)
+    \item Choix de la chambre avec affichage des disponibilités
+    \item Saisie des dates avec validation immédiate (format, cohérence, dates futures)
+    \item Vérification des conflits de réservation via l'algorithme de chevauchement
+    \item Calcul automatique du montant (nuitées × prix/nuit)
+    \item Confirmation et persistance dans \texttt{reservations.dat}
+    \item Mise à jour du statut de disponibilité de la chambre
 \end{enumerate}
 
-L'annulation est implémentée comme un "soft delete" pour préserver l'historique.
+Cette séquence garantit l'intégrité des données et prévient les surréservations.
 
-\subsubsection{Consulter Disponibilité}
+\subsubsection{Séquence : Génération de Facture}
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.85\textwidth]{diagramms/S-PROJET/SE.png}
-    \caption{Séquence - Consultation des disponibilités}
+    \includegraphics[width=0.9\textwidth]{diagramms/S-PROJET/SE.png}
+    \caption{Diagramme de séquence - Facturation automatisée}
 \end{figure}
 
-Workflow de consultation pour les clients et réceptionnistes :
-
+Le module de facturation automatise les calculs :
 \begin{enumerate}
-    \item Saisie des dates de début et fin
-    \item Le système compare contre toutes les réservations actives
-    \item Pour chaque chambre : calcul du statut (libre/occupée)
-    \item Retour d'une liste des chambres libres avec détails (type, prix)
+    \item Sélection d'une réservation active
+    \item Récupération des informations client et chambre
+    \item Calcul précis des nuitées avec \texttt{mktime()}/\texttt{difftime()}
+    \item Génération d'un ID unique pour la facture
+    \item Création de l'objet Facture avec tous les détails
+    \item Sauvegarde dans \texttt{factures.dat}
+    \item Export optionnel au format texte (\texttt{facture\_N.txt})
 \end{enumerate}
 
-Cette fonctionnalité offre une vue en temps réel de l'inventaire disponible.
+\subsection{Diagramme d'Activité}
 
-\subsubsection{Portail Client}
+Les diagrammes d'activité modélisent les workflows métier et les logiques de contrôle complexes.
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.8\textwidth]{diagramms/S-PROJET/SF.png}
-    \caption{Séquence - Workflow du portail client}
+    \caption{Diagramme d'activité - Workflow de réservation}
 \end{figure}
 
-Le workflow spécifique à l'acteur "Client" permet :
-
-\begin{enumerate}
-    \item Client sélectionne "Consulter mes réservations"
-    \item Saisie Email/ID pour authentification
-    \item Recherche dans la base de données
-    \item Affichage de la liste personnalisée des réservations
-\end{enumerate}
-
-Ce portail en libre-service réduit la charge des réceptionnistes.
-
-\subsection{Diagrammes de Séquence - Gestion des Entités}
-
-\subsubsection{Ajouter un Client}
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.85\textwidth]{diagramms/S-PROJET/SH.png}
-    \caption{Séquence - Ajout d'un nouveau client}
-\end{figure}
-
-La logique d'ajout de client assure l'unicité :
-
-\begin{enumerate}
-    \item Utilisateur sélectionne "Ajouter un client"
-    \item Système affiche le formulaire vierge
-    \item Saisie des données (nom, prénom, email, téléphone)
-    \item Vérification dans \texttt{Fichier.dat} : l'email doit être unique
-    \item Si email existe : retour erreur "Client déjà enregistré"
-    \item Si unique : génération d'un nouvel ID client et sauvegarde
-\end{enumerate}
-
-\textbf{Correspondance UI} : Le formulaire vide correspond à l'écran 4-3.png (AJOUTER NOUVEAU CLIENT).
-
-\subsubsection{Rechercher un Client}
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.85\textwidth]{diagramms/S-PROJET/SI.png}
-    \caption{Séquence - Recherche de client dans la base}
-\end{figure}
-
-Le mécanisme de recherche flexible supporte plusieurs critères :
-
-\begin{enumerate}
-    \item Utilisateur choisit le critère (Nom, Email ou ID)
-    \item Saisie de la requête (ex: "Dupont")
-    \item Système parcourt la liste des clients
-    \item Retour des correspondances exactes ou partielles
-    \item Affichage des résultats en tableau
-\end{enumerate}
-
-\textbf{Correspondance UI} : La saisie correspond à 3-5.png, les résultats à 3-6.png (tableau de résultats).
-
-\subsubsection{Ajouter une Chambre}
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.8\textwidth]{diagramms/S-PROJET/SJ.jpg}
-    \caption{Séquence - Expansion de l'inventaire des chambres}
-\end{figure}
-
-Le processus administratif d'ajout de chambre :
-
-\begin{enumerate}
-    \item Administrateur saisit Numéro de chambre, Étage et Type
-    \item Vérification de l'unicité du numéro de chambre
-    \item Si numéro existe déjà : erreur "Chambre déjà enregistrée"
-    \item Si unique : ajout à l'inventaire avec génération automatique d'ID
-\end{enumerate}
-
-\textbf{Correspondance UI} : Cette logique s'exécute dans l'interface 4-5.png (Add New Room - Debug Mode).
-
-\subsection{Diagramme de Séquence - Facturation}
-
-\subsubsection{Générer une Facture}
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.9\textwidth]{diagramms/S-PROJET/SG.png}
-    \caption{Séquence - Moteur de calcul et génération de factures}
-\end{figure}
-
-Le module de facturation automatise le processus complet :
-
-\begin{enumerate}
-    \item Réceptionniste saisit un ID de réservation (ex: 123)
-    \item Le \texttt{ModuleFacturation} récupère les données de trois sources :
-    \begin{itemize}
-        \item \texttt{reservations.dat} : Dates et ID chambre
-        \item \texttt{clients.dat} : Nom et coordonnées du client
-        \item \texttt{chambres.dat} : Prix par nuit
-    \end{itemize}
-    \item Calcul explicite : $Total = (Date\_Départ - Date\_Arrivée) \times Prix\_Nuit$
-    \item Génération d'un ID unique de facture
-    \item Création de l'objet Facture complet
-    \item Sauvegarde dans \texttt{factures.dat}
-    \item Option "Print to File" : export vers \texttt{facture\_N.txt}
-\end{enumerate}
-
-\textbf{Correspondance UI} :
+Ce diagramme présente le flux complet d'une réservation, incluant :
 \begin{itemize}
-    \item L'affichage final correspond à 4-10.png (Facture \#4 avec calcul : 731 nuits × 500.00 MAD = 365,500.00 MAD)
-    \item L'export fichier correspond à 4-11.png (création de \texttt{facture\_4.txt})
+    \item Les points de décision (dates valides ? chambre disponible ?)
+    \item Les actions parallèles (validation multiples critères)
+    \item Les chemins alternatifs (succès vs échec)
+    \item Les actions post-traitement (notification, logging)
 \end{itemize}
+
+Le parallélisme conceptuel est implémenté via des appels de fonctions de validation séquentiels en C.
+
+\subsection{Diagramme d'États-Transitions}
+
+Le diagramme d'états modélise les cycles de vie des entités principales.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.85\textwidth]{diagramms/S-PROJET/SG.png}
+    \caption{Diagramme d'états - Cycle de vie d'une réservation}
+\end{figure}
+
+Une réservation transite par les états suivants :
+\begin{itemize}
+    \item \textbf{CRÉÉE} : État initial après validation et persistance
+    \item \textbf{ACTIVE} : Réservation confirmée et effective
+    \item \textbf{EN\_COURS} : Client actuellement à l'hôtel (check-in effectué)
+    \item \textbf{TERMINÉE} : Séjour achevé, facture générée
+    \item \textbf{ANNULÉE} : Réservation annulée (soft delete)
+\end{itemize}
+
+Les transitions sont déclenchées par des événements métier (check-in, check-out, annulation) et respectent les contraintes temporelles.
+
+\subsection{Architecture des Composants}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{diagramms/S-PROJET/SH.png}
+    \caption{Diagramme de composants - Architecture modulaire}
+\end{figure}
+
+Ce diagramme présente la décomposition modulaire du système :
+\begin{itemize}
+    \item \textbf{Composant UI} : Modules ncurses (\texttt{ui\_*.c}) gérant l'affichage et les interactions
+    \item \textbf{Composant Métier} : Logique applicative (\texttt{clients.c}, \texttt{chambres.c}, \texttt{reservations.c})
+    \item \textbf{Composant Données} : Couche de persistance (\texttt{fichiers.c}) avec abstraction des I/O
+    \item \textbf{Composant Sécurité} : Module d'authentification (\texttt{auth.c}) et gestion RBAC
+\end{itemize}
+
+Les interfaces entre composants sont clairement définies via les fichiers d'en-tête (\texttt{.h}), favorisant le découplage et la réutilisabilité.
+
+\subsection{Diagramme de Déploiement}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{diagramms/S-PROJET/SI.png}
+    \caption{Diagramme de déploiement - Architecture physique}
+\end{figure}
+
+Le déploiement illustre l'architecture mono-poste :
+\begin{itemize}
+    \item \textbf{Nœud Applicatif} : Exécutable compilé (\texttt{hotel\_app.exe})
+    \item \textbf{Stockage Local} : Répertoire \texttt{data/} contenant les fichiers binaires
+    \item \textbf{Dépendances} : Bibliothèque ncurses, runtime GCC
+    \item \textbf{Terminal} : Interface d'interaction utilisateur
+\end{itemize}
+
+Cette architecture simplifie le déploiement (copie de répertoire) et garantit la portabilité entre systèmes compatibles POSIX.
+
+\subsection{Vue d'Ensemble du Système}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.95\textwidth]{diagramms/S-PROJET/SJ.jpg}
+    \caption{Architecture globale du système de gestion hôtelière}
+\end{figure}
+
+Cette vue synthétique intègre tous les aspects du système :
+\begin{itemize}
+    \item Les acteurs et leurs niveaux d'accès
+    \item Les modules fonctionnels et leurs interactions
+    \item Les flux de données entre composants
+    \item Les mécanismes de persistance et de sécurité
+\end{itemize}
+
+Cette modélisation complète a guidé l'implémentation et servi de référence lors des phases de développement et de débogage.
 
 \section{Système de Contrôle d'Accès}
 
@@ -731,7 +665,7 @@ Notre application implémente un contrôle d'accès basé sur les rôles (Role-B
 \begin{table}[H]
 \centering
 \rowcolors{2}{gray!10}{white}
-\begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}p{3cm}X}
+\begin{tabular}{L{3.5cm}L{11cm}}
 \toprule
 \textbf{\color{ensahblue}Rôle} & \textbf{\color{ensahblue}Privilèges} \\
 \midrule
@@ -741,7 +675,7 @@ Notre application implémente un contrôle d'accès basé sur les rôles (Role-B
 \addlinespace[0.2em]
 \textbf{Client} & Portail libre-service : consultation disponibilités, création et gestion de réservations personnelles \\
 \bottomrule
-\end{tabularx}
+\end{tabular}
 \caption{Matrice des privilèges par rôle (RBAC)}
 \end{table}
 
@@ -817,6 +751,7 @@ int calculer_nuitees(const char* date_debut, const char* date_fin) {
 }
 \end{lstlisting}
 
+% ========== CHAPITRE 3 : RÉALISATION TECHNIQUE ==========
 \chapter{Réalisation Technique}
 
 \section{Organisation du Code Source}
@@ -962,6 +897,7 @@ void sauvegarder_clients(Client clients[], int nb_clients) {
 }
 \end{lstlisting}
 
+% ========== CHAPITRE 4 : VALIDATION ET TESTS ==========
 \chapter{Validation et Interface Utilisateur}
 
 \section{Système d'Authentification et Enregistrement}
@@ -1233,29 +1169,29 @@ Le système a été validé à travers des scénarios de test couvrant tous les 
 \begin{table}[H]
 \centering
 \rowcolors{2}{gray!10}{white}
-\begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}p{3.5cm}X}
+\begin{tabular}{L{4cm}C{5.5cm}L{4.5cm}}
 \toprule
-\textbf{\color{ensahblue}Scénario} & \textbf{\color{ensahblue}Description} \\
+\textbf{\color{ensahblue}Scénario} & \textbf{\color{ensahblue}Actions} & \textbf{\color{ensahblue}Résultat Attendu} \\
 \midrule
-Authentification Admin & Login avec identifiants valides \\
+Authentification Admin & Login avec identifiants admin/admin123 & Accès au dashboard complet avec toutes fonctionnalités \\
 \addlinespace[0.15em]
-Enregistrement Client & Remplir formulaire d'inscription \\
+Enregistrement Client & Remplir formulaire avec rôle client & Compte créé, message de succès affiché \\
 \addlinespace[0.15em]
-Ajout Client & Saisie formulaire par admin \\
+Ajout Client & Saisie formulaire client complet & Client enregistré avec ID auto-généré \\
 \addlinespace[0.15em]
-Réservation Valide & Dates valides et chambre libre \\
+Réservation Valide & Dates valides, chambre disponible & Réservation créée, chambre marquée occupée \\
 \addlinespace[0.15em]
-Conflit de Réservation & Dates se chevauchant avec existant \\
+Conflit de Réservation & Dates se chevauchant pour même chambre & Erreur détectée, réservation refusée \\
 \addlinespace[0.15em]
-Recherche Client & Recherche par nom ou ID \\
+Recherche Client & Recherche par nom partiel & Liste filtrée des correspondances \\
 \addlinespace[0.15em]
-Facturation & Sélectionner une réservation finie \\
+Facturation & Sélection réservation active & Facture générée avec calculs corrects \\
 \addlinespace[0.15em]
-Export Facture & Génération du fichier .txt \\
+Export Facture & Option Print to File & Fichier texte créé dans répertoire \\
 \addlinespace[0.15em]
-Portail Client & Login client et consultation \\
+Portail Client & Login avec compte client & Accès limité aux fonctions client uniquement \\
 \bottomrule
-\end{tabularx}
+\end{tabular}
 \caption{Scénarios de tests fonctionnels validés}
 \end{table}
 
@@ -1264,17 +1200,18 @@ Portail Client & Login client et consultation \\
 Toutes les contraintes métier et règles de gestion ont été rigoureusement testées et validées :
 
 \begin{itemize}
-    \item [$\checkmark$] \textbf{Unicité des identifiants} : IDs uniques pour clients, réservations et factures
-    \item [$\checkmark$] \textbf{Validation des formats} : Dates au format YYYY-MM-DD, emails valides
-    \item [$\checkmark$] \textbf{Contraintes temporelles} : Interdiction des dates passées pour nouvelles réservations
-    \item [$\checkmark$] \textbf{Cohérence des dates} : Vérification date\_début < date\_fin
-    \item [$\checkmark$] \textbf{Détection des conflits} : Algorithme de chevauchement empêchant double réservation
-    \item [$\checkmark$] \textbf{Calculs précis} : Nuitées calculées avec mktime/difftime pour précision
-    \item [$\checkmark$] \textbf{Persistance} : Données correctement sauvegardées et récupérées entre sessions
-    \item [$\checkmark$] \textbf{Intégrité référentielle} : Liens cohérents entre clients et réservations
-    \item [$\checkmark$] \textbf{Contrôle d'accès} : RBAC respecté selon les rôles définis
+    \item [\checkmark] \textbf{Unicité des identifiants} : IDs uniques pour clients, réservations et factures
+    \item [\checkmark] \textbf{Validation des formats} : Dates au format YYYY-MM-DD, emails valides
+    \item [\checkmark] \textbf{Contraintes temporelles} : Interdiction des dates passées pour nouvelles réservations
+    \item [\checkmark] \textbf{Cohérence des dates} : Vérification date\_début < date\_fin
+    \item [\checkmark] \textbf{Détection des conflits} : Algorithme de chevauchement empêchant double réservation
+    \item [\checkmark] \textbf{Calculs précis} : Nuitées calculées avec mktime/difftime pour précision
+    \item [\checkmark] \textbf{Persistance} : Données correctement sauvegardées et récupérées entre sessions
+    \item [\checkmark] \textbf{Intégrité référentielle} : Liens cohérents entre clients et réservations
+    \item [\checkmark] \textbf{Contrôle d'accès} : RBAC respecté selon les rôles définis
 \end{itemize}
 
+% ========== CONCLUSION ==========
 \chapter*{Conclusion}
 \addcontentsline{toc}{chapter}{Conclusion}
 

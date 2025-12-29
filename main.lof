@@ -1,0 +1,44 @@
+\babel@toc {french}{}\relax 
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Architecture en trois couches du système}}{10}{figure.caption.4}%
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Diagramme des relations entre entités}}{12}{figure.caption.5}%
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Diagramme de cas d'utilisation - Vue globale du système}}{13}{figure.caption.6}%
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Diagramme de classes - Structure des entités métier}}{14}{figure.caption.7}%
+\contentsline {figure}{\numberline {2.5}{\ignorespaces Séquence détaillée - Création de réservation par le réceptionniste}}{15}{figure.caption.9}%
+\contentsline {figure}{\numberline {2.6}{\ignorespaces Séquence détaillée - Vérification de disponibilité des chambres}}{16}{figure.caption.11}%
+\contentsline {figure}{\numberline {2.7}{\ignorespaces Séquence - Modification d'une réservation existante}}{16}{figure.caption.13}%
+\contentsline {figure}{\numberline {2.8}{\ignorespaces Séquence - Annulation de réservation}}{17}{figure.caption.15}%
+\contentsline {figure}{\numberline {2.9}{\ignorespaces Séquence - Consultation des disponibilités}}{18}{figure.caption.17}%
+\contentsline {figure}{\numberline {2.10}{\ignorespaces Séquence - Workflow du portail client}}{18}{figure.caption.19}%
+\contentsline {figure}{\numberline {2.11}{\ignorespaces Séquence - Ajout d'un nouveau client}}{19}{figure.caption.21}%
+\contentsline {figure}{\numberline {2.12}{\ignorespaces Séquence - Recherche de client dans la base}}{20}{figure.caption.23}%
+\contentsline {figure}{\numberline {2.13}{\ignorespaces Séquence - Expansion de l'inventaire des chambres}}{20}{figure.caption.25}%
+\contentsline {figure}{\numberline {2.14}{\ignorespaces Séquence - Moteur de calcul et génération de factures}}{21}{figure.caption.27}%
+\contentsline {figure}{\numberline {2.15}{\ignorespaces Flux d'authentification et routage par rôle}}{22}{figure.caption.29}%
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Écran principal de connexion - Saisie des identifiants}}{27}{figure.caption.30}%
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Tentative de connexion administrative - Pré-remplissage du champ utilisateur}}{28}{figure.caption.31}%
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Écran d'enregistrement - État initial avec focus sur le champ Username}}{28}{figure.caption.32}%
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Formulaire d'enregistrement complété - Compte client}}{29}{figure.caption.33}%
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Confirmation d'enregistrement réussi pour l'utilisateur client2}}{29}{figure.caption.34}%
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Enregistrement d'un utilisateur administrateur - Sélection du rôle admin}}{30}{figure.caption.35}%
+\contentsline {figure}{\numberline {4.7}{\ignorespaces Tableau de bord administrateur - Vue d'ensemble des métriques hôtelières}}{30}{figure.caption.36}%
+\contentsline {figure}{\numberline {4.8}{\ignorespaces Tableau de bord client - Avertissement de profil manquant}}{31}{figure.caption.37}%
+\contentsline {figure}{\numberline {4.9}{\ignorespaces Écran de gestion des clients - Liste complète des enregistrements}}{32}{figure.caption.38}%
+\contentsline {figure}{\numberline {4.10}{\ignorespaces Boîte de dialogue de recherche client - Saisie du critère}}{32}{figure.caption.39}%
+\contentsline {figure}{\numberline {4.11}{\ignorespaces Résultats de recherche - Correspondances pour la requête "yazid"}}{33}{figure.caption.40}%
+\contentsline {figure}{\numberline {4.12}{\ignorespaces Formulaire d'ajout de nouveau client - Champs vierges}}{33}{figure.caption.41}%
+\contentsline {figure}{\numberline {4.13}{\ignorespaces Gestion des chambres - Inventaire complet avec statuts}}{34}{figure.caption.42}%
+\contentsline {figure}{\numberline {4.14}{\ignorespaces Interface de modification de chambre - Édition des paramètres}}{34}{figure.caption.43}%
+\contentsline {figure}{\numberline {4.15}{\ignorespaces Ajout de nouvelle chambre en mode Debug - Saisie des paramètres}}{35}{figure.caption.44}%
+\contentsline {figure}{\numberline {4.16}{\ignorespaces Interface Browse \& Book Rooms - Sélection de chambre disponible}}{35}{figure.caption.45}%
+\contentsline {figure}{\numberline {4.17}{\ignorespaces Assistant de réservation - Étape 1 : Saisie des dates et contexte}}{36}{figure.caption.46}%
+\contentsline {figure}{\numberline {4.18}{\ignorespaces Assistant de réservation - Étape 2 : Sélection avec codage couleur}}{36}{figure.caption.47}%
+\contentsline {figure}{\numberline {4.19}{\ignorespaces Assistant de réservation (vue admin) - Étape 1 : Configuration initiale}}{37}{figure.caption.48}%
+\contentsline {figure}{\numberline {4.20}{\ignorespaces Assistant de réservation - Étape 3 : Association avec le profil client}}{37}{figure.caption.49}%
+\contentsline {figure}{\numberline {4.21}{\ignorespaces Gestion des réservations - Liste complète avec détails et montants}}{38}{figure.caption.50}%
+\contentsline {figure}{\numberline {4.22}{\ignorespaces Menu principal Billing \& Invoices - Structure de table vide}}{38}{figure.caption.51}%
+\contentsline {figure}{\numberline {4.23}{\ignorespaces Vue détaillée d'une facture générée - Facture \#4}}{39}{figure.caption.52}%
+\contentsline {figure}{\numberline {4.24}{\ignorespaces Explorateur Windows - Confirmation d'export de facture}}{39}{figure.caption.53}%
